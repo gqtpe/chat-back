@@ -8,7 +8,7 @@ const server = createServer(app);
 const io = new Server(server);
 
 app.get('/', (req: any, res:any) => {
-    res.sendFile(join(__dirname, 'index.html'));
+    res.send('Hello its websocket!');
 });
 
 io.on('connection', (socket: any) => {
