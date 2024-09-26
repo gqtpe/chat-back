@@ -1,0 +1,22 @@
+{
+  "name": "chat-back",
+  "version": "1.0.0",
+  "description": "websocket chat backend",
+  "main": "index.js",
+  "author": "gqtpe",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "nodemon src/index.ts"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.2",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7",
+    "socket.io": "^4.8.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
