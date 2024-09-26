@@ -7,14 +7,16 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server);
 
+const PORT = process.env.PORT || 3000;
+
 app.get('/', (req: any, res:any) => {
     res.send('Hello its websocket!');
 });
 
-io.on('connection', (socket: any) => {
+io.on('connection', (socket:any) => {
     console.log('a user connected');
 });
 
-server.listen(3000, () => {
-    console.log('server running at http://localhost:3000');
+server.listen(PORT, () => {
+    console.log(`server running at http://localhost:${PORT}`);
 });
