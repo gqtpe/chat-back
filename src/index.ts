@@ -5,7 +5,11 @@ const { Server } = require('socket.io');
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server);
+const io = new Server(server,{
+    cors: {
+        origin: "http://localhost:5173"
+    }
+});
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,7 +17,7 @@ app.get('/', (req: any, res:any) => {
     res.send('Hello its websocket!');
 });
 
-io.on('connection', (socket:any) => {
+io.on('connection', (socket: any) => {
     console.log('a user connected');
 });
 
